@@ -1,0 +1,47 @@
+# Desktop executors
+
+Desktop applications are external executors, not native Codex subagents. Use available supported tools; skill prose cannot create missing Computer Use/MCP permissions. Prefer the user's requested desktop application. Do not control the same desktop concurrently from several agents. Observe the relevant state, act, read back and verify the outcome; reuse sufficient current observations and do not repeatedly probe an unchanged known blocker.
+
+For participating single-host projects, acquire the GUI grant under [local coordination](local-coordination.md) before observations/actions and release it after the bounded operation. Preserve separate execution/client/workspace grants while background work continues; do not assume changing conversation, folder or foreground app is safe for a running job. Human activity is not prevented by the helper: stop conflicting mutations and reconcile current state when it changes.
+
+| Level | Required evidence |
+|---|---|
+| C1 interface control | Current app opened, relevant mode selected and visible feedback read |
+| C2 engineering execution | Bounded real file edits, recoverable deliverables and successful affected build/tests |
+| C3 recoverable handoff | Main dispatches and collects actual artifacts, detects terminal state, reconciles interruption and safely resumes without duplicate side effects |
+
+Record levels separately with observation time, versions when available, scope and evidence. C1 never implies C2/C3; a historical success is not current availability. Distinguish installed, enabled, authenticated, callable and verified.
+
+## Gemini Desktop engineering task mode (Work / Task)
+
+Verify the actual UI label and engineering capabilities; Task is the current project selection; older requests also used Work. Neither label proves equivalent engineering capability. Reuse the verified conversation for the same product task, including follow-ups, fixes and changed-input attempts. A new attempt does not require a new conversation. For unrelated work first verify project/task identity; use a separate bound session when isolation is required, without transmitting context into an unrelated chat. Inspect quota, current task state and folder controls before dispatch. Never bypass a limit by changing account, provider route, model API or upgrading without authorization.
+
+Reuse the existing common project workspace and applicable folder grant when Codex and the desktop executor already share it. A task artifact directory limits assigned reads/writes; it does not have to become the application's selected workspace. Do not reopen folder selection or request another grant merely because a new task uses a different relative subdirectory. If the selected workspace is an authorized ancestor of the product, record the product-relative mapping and verify actual input access. Only change folder selection when current access is missing, points elsewhere, or the task requires stronger isolation.
+
+Prepare only the necessary inputs in the existing authorized workspace, or use a task-specific worktree/copy when isolation is needed. For frontend development, include the relevant source and applicable approved design/contract and lockfile; for other authorized desktop or file tasks, use their actual input and output scope instead. Do not require frontend assets for unrelated tasks or grant backend access unless it belongs to the user's authorized scope. Exclude credentials and unrelated private data or repositories. Confirm actual app folder grants and inherited wider access. Git and prompt boundaries do not constitute an OS sandbox; record any unenforced boundary. If real permissions cannot meet the task's risk, block that dispatch.
+
+Attach/read the task contract, submit once, observe status, collect real files and compare baselines. Preserve command output and unresolved issues. A completion message is a clue; mark EXECUTION_DONE only after independently confirming that the matching task has terminated and its result record belongs to that attempt. Quota or disabled folder input → BLOCKED, leave an actionable handoff and continue independent work. Do not promise the displayed reset time is correct.
+
+## Stitch Desktop / MCP
+
+For a required design task, use the desktop app first when the user requests it and desktop control is available. Use MCP only where the user's authorized route allows it and the connection is callable and applicable; reuse the installed official skill when its required transport exists. Record the actual transport: MCP evidence does not establish desktop capability or vice versa. Bind MCP evidence to the actual Antigravity client, version and permissions: Desktop success does not prove CLI access, nor does CLI success prove Desktop access. See [design integration](design-integration.md). Read current project state before writes. Never overwrite existing approved designs or accept new legal terms without the required user decision.
+
+Record project/screen/version when exposed, export actual design resources and hash the package. If the app has no immutable version, bind exported files by hashes and record that limitation. Main may accept a design within established requirements after checking it. Ask the user only for unresolved material visual/business choices, a user-required review gate, or additional authorization; do not invent a universal manual approval gate. Inspect hallucinated controls, sample data and business assumptions. Generation alone is not acceptance; record the design check and decision. A screen cannot replace product routes/auth/contracts.
+
+## Unknown execution state
+
+After interruption, reconnect to the existing task and inspect visible status plus actual files. Do not press Submit again just because a result was missed. Follow handoff.md reconciliation. Version changes invalidate only affected capability evidence. If tooling cannot establish completion/recovery, record NOT_TESTED/BLOCKED at the appropriate level.
+
+Reuse the same Gemini Desktop or Antigravity conversation for all stages of one task whenever it remains callable and scoped to the same project. Record the conversation handle or stable locator in the task record and pass only incremental updates. Opening a new conversation is an exception for an unrecoverable session, contaminated context, exceeded context capacity or explicit isolation request. Before that exception, preserve the old locator and status, write a handoff summary and verify the new conversation's project, permissions and input hashes.
+
+If the control tool reports that the user changed application state, the app returns to an older conversation, or submitted context is missing, stop mutations and take a fresh observation. Preserve the last known task/session locator and submission certainty; inspect only the bound task and its authorized files. This is control-context uncertainty, not proof that the job failed or terminated, and not permanent loss of desktop capability. If a prompt may have been submitted, reconcile terminal status and side effects before any retry or fallback. While RUNNING or UNKNOWN, do not replay elsewhere. If definitely not submitted, rebind and read back the correct existing session, workspace and prompt before a single submission. If safe control remains unavailable, block only dependent work and continue independent work; do not create repeated chats or probe the currently unavailable Antigravity route. Use only the assignment's authorized alternatives after reconciliation.
+
+## Antigravity CLI
+
+Discover the actual executable (for example `agy`) and read its supported help; do not assume VS Code's `antigravity` launcher or standalone `gemini` is the same agent CLI. Use existing account/model/effort settings and a bounded prompt or supported structured output. Do not enable skip-permissions, change providers or grant broader folders to make a task pass. Bind the process/conversation handle, cwd, task/attempt ID, result path and actual model when exposed. For continuation, discover and use only actually supported resume/session options; do not invent flags. Bind follow-ups to the same verified session, send only changed inputs and a compact checkpoint. Context exhaustion requires a summary and old-state reconciliation before a justified replacement session. CLI launch success is interface evidence only; require a real model response for callability and verified artifacts for engineering completion. Apply the same write isolation, terminal detection and reconciliation rules as desktop tasks. A timeout does not prove the underlying task terminated.
+
+## Antigravity Desktop and fresh UI observations
+
+Use Antigravity Desktop only when authorized and its required engineering/file capabilities are verified. Record the actual workspace, task locator, configured model when exposed and result path. Do not confuse a launcher or open editor with an executing coding agent. Apply the same actual grants, scope, collection and termination requirements as CLI.
+
+For all desktop routes observe → locate → act → refresh → verify. After mode, folder, dialog or page changes reobserve and relocate controls; do not reuse stale accessibility identifiers or coordinates. Read back the target folder and task prompt before submission. Submit once. Missing feedback requires reconciliation of that attempt, not another click. Native desktop actions need native observations; DOM locators are not native-app controls.
