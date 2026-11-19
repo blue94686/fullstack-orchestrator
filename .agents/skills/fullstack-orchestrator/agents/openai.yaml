@@ -1,0 +1,6 @@
+interface:
+  display_name: "Fullstack Orchestrator"
+  short_description: "Coordinate Codex chat, desktop tasks and integration"
+  default_prompt: "Use $fullstack-orchestrator to inspect this project, reuse existing skills, and coordinate only the workers needed to complete and verify my task."
+policy:
+  allow_implicit_invocation: true
