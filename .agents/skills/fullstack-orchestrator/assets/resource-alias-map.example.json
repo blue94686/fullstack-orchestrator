@@ -1,0 +1,32 @@
+{
+  "schema": "project-resource-alias-map-v1",
+  "scope": "example-only; replace with reviewed nonsecret project facts",
+  "updated_at": "UNKNOWN",
+  "aliases": [
+    {
+      "alias": "local-postgres",
+      "canonical_identity": {
+        "kind": "database",
+        "deployment": "local-dev",
+        "engine": "postgres",
+        "database": "app_dev"
+      },
+      "applies_to": {
+        "project_root_relative": ".",
+        "environment": "development"
+      },
+      "source_evidence": ["path/to/nonsecret-compose-or-config-reference"],
+      "confidence": "UNVERIFIED",
+      "verified_by": "UNKNOWN",
+      "verified_at": "UNKNOWN",
+      "notes": "Do not infer from an alias or port alone. Confirm actual deployment identity."
+    }
+  ],
+  "rules": [
+    "Aliases are labels, not discovery. Never store credentials, connection strings, tokens, or signed URLs.",
+    "Map only after checking authoritative project config or observed runtime identity.",
+    "Generate any lock key with the canonical resource_identity.py tool; a map alone does not lock or enforce access.",
+    "If two aliases may refer to one resource but evidence is incomplete, treat them as a potential collision and serialize or block conflicting writes until resolved.",
+    "Keep this map project-local. Cross-project shared-resource coordination needs an explicitly authorized, nonsecret common identity and the same host coordinator protocol."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "schema_version": 2,
+  "task_id": null,
+  "attempt_id": null,
+  "owner": "codex-main",
+  "executor": {
+    "software": null,
+    "transport": null,
+    "model": "UNKNOWN",
+    "external_handle": null,
+    "locator": null,
+    "skill_mode": null,
+    "skills_used": []
+  },
+  "task_kind": null,
+  "goal": null,
+  "non_goals": [],
+  "dependencies": [],
+  "baseline": {
+    "source_identity": null,
+    "existing_user_changes": null,
+    "contract_version": null,
+    "design_version": null
+  },
+  "workspace": null,
+  "writable_paths": [],
+  "actual_grants": [],
+  "inputs": [],
+  "deliverables": [],
+  "result_location": null,
+  "acceptance": [],
+  "limits": {
+    "task_deadline": null,
+    "observation_wait": null,
+    "usage_budget": "UNKNOWN",
+    "same_issue_repair_rounds": 2
+  },
+  "fallback": {
+    "policy": "inherit_project_default",
+    "ordered_routes": [],
+    "resolved_routes": [],
+    "conditions": []
+  },
+  "observation": {
+    "submit_method": null,
+    "status_method": null,
+    "collect_method": null,
+    "cancel_method": "UNKNOWN",
+    "resume_method": "UNKNOWN",
+    "observed_at": null,
+    "blocker": null,
+    "recheck_trigger": null
+  },
+  "status": "DRAFT",
+  "outcomes": {
+    "execution": "NOT_TESTED",
+    "artifacts": "NOT_TESTED",
+    "integration": "NOT_TESTED"
+  },
+  "result": {
+    "candidate_identity": null,
+    "files": [],
+    "contract_differences": [],
+    "mock_boundaries": [],
+    "checks": [],
+    "scope_review": "NOT_TESTED",
+    "integration_decision": "NOT_TESTED"
+  },
+  "evidence": [],
+  "unresolved": [],
+  "next_action": null
+}
